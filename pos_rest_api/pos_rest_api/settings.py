@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'pos',
     'pos_users',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'corsheaders',
+
 
 ]
 
@@ -64,6 +66,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -92,6 +95,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pos_rest_api.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = ['https://posrestapicopy-production.up.railway.app','https://*.127.0.0.1']
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_WHITELIST = (
+    'https://posrestapicopy-production.up.railway.app'
+)
+
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+]
 
 
 # Database
