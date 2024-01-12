@@ -91,6 +91,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pos_rest_api.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = ['https://posrestapicopy-production.up.railway.app','https://*.127.0.0.1']
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
