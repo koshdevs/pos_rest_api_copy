@@ -22,10 +22,6 @@ def api_stocks_detail_view(request,serial):
 
         return Response(status = status.HTTP_404_NOT_FOUND)
     
-    user = request.user 
-    if user.is_staff == False:
-
-        return Response({'response':"you dont have permission to view"})
     
     if request.method == 'GET':
 
