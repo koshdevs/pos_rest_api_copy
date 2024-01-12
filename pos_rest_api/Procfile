@@ -1,1 +1,1 @@
-web: gunicorn 'post_rest_api.wsgi' --timeout 480
+web: gunicorn 'pos_rest_api.wsgi' --timeout 480
